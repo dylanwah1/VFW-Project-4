@@ -11,7 +11,7 @@ window.addEventListener("DOMContentLoaded", function () {
         var formTag = document.getElementsByTagName("form"),
             selectLi = $('dropDown'),
             makeSelect = document.createElement('select');
-            makeSelect.setAttribute("id", "dropDrown");
+            makeSelect.setAttribute("id", "dropDownSelect");
         for (var i = 0, j = dropDown.length; i<j; i++) {
             var makeOption = document.createElement('option');
             var optText = dropDown[i];
@@ -71,7 +71,7 @@ window.addEventListener("DOMContentLoaded", function () {
         }
         getSelectedRadio();
         var item = {};
-            item.style = ["Style:", $('dropDown').value];
+            item.style = ["Style:", $('dropDownSelect').value];
             item.fname = ["First Name:", $('fname').value];
             item.lname = ["Last Name:", $('lname').value];
             item.email = ["Email:", $('email').value];
@@ -165,7 +165,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
         toggleControls("off");
 
-        $('dropDown')
+        $('dropDownSelect')
             .value = item.style[1];
         $('fname')
             .value = item.fname[1];
@@ -182,7 +182,7 @@ window.addEventListener("DOMContentLoaded", function () {
         $('comment')
             .value = item.comment[1];
 
-        $("saveData").removeEventListener("click", storeData);
+        $('saveData').removeEventListener("click", storeData);
         $('saveData').value = "Edit Item";
         var editSubmit = $('saveData');
         editSubmit.addEventListener("click", validate);
@@ -216,7 +216,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
     function validate(eventData) {
         //Define the elements to be checked
-        var getstyle = $('dropDown');
+        var getstyle = $('dropDownSelect');
         var getfname = $('fname');
         var getlname = $('lname');
         var getemail = $('email');
